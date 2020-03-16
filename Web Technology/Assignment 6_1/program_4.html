@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            Word Founder
+        </title>
+        <script>
+            function findword(){
+                var inputString = document.getElementById("str").value;
+                document.getElementById('res').innerHTML = inputString.value;
+                var word = document.getElementById("word").value;
+                var arr = inputString.split(" ");
+                for(let i = 0; i < arr.length - 1; i++){
+                    if(arr.indexOf(word)!=-1){
+                        alert(arr.indexOf(word)+1);
+                        break;
+                    }
+                    else{
+                        alert("Word Not Found.");
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form method="post" align="center">
+            <fieldset>
+                <legend>Word Founder</legend><br/>
+                <input type="text" id="str" placeholder="Enter Your String Here."/><br/>
+                <input type="text" id="word" placeholder="Enter A Word To Find From A String."/><br/>
+                <input type="submit" value="Submit" onclick="findword()"/><br/>
+            </fieldset>
+            <div><p style="color: blueviolet; text-align: center; font-size: 35px;">You Have Entered String Is : </p></div><br/><br/>
+            <div><p id="res" style="color: green; font-size: 25px; font-style: oblique;"></p></div>
+        </form>
+    </body>
+</html>
