@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Login Form</title>
+    </head>
+    <body>
+        <form class="wrapper">
+            Username : <input type="text" class="uname" id="uname"/><br/><br/>
+            Password : <input type="password" class="pass" id="pass"/><br/><br/>
+            <input style="margin-left: 75px;" type="submit" id="submit" class="submit"/><br/><br/>
+            <script>
+                var uname = document.getElementById("uname").value;
+                var pass = document.getElementById("pass").value;
+                var rpass = /^[a-zA-Z\d]{6,12}$/;
+                var runame = /(^?!.+_@)+[a-zA-z\d]{8,}$/;
+		
+                if(uname.test(runame) && pass.test(rpass)){
+                    document.write("Username Is Valid.");
+                }
+                else{
+                    document.write("Ivalid");
+                }
+            </script>
+        </form>
+    </body>
+</html>

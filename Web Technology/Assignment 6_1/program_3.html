@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            Birthday Counter
+        </title>
+        <script>
+            function counter(){
+                var input = document.getElementById("bd").value;
+                var userBirthdate = new Date(input);
+                var now = new Date();
+                var myBirth = [userBirthdate.getMonth()+1,userBirthdate.getDate()];
+                var event = new Date(now.getFullYear(), myBirth[0], myBirth[1]);
+                if(now.getTime() <= event.getTime()){
+                    event = new Date(now.getFullYear(), myBirth[0], myBirth[1]);
+                    var diff = event.getTime() - now.getTime();
+                    var days = Math.floor(diff/86400000);
+                    var res = days + " days remaining.";
+                    document.getElementById('res2').innerHTML = res;
+                }
+                else if(now.getTime() >= event.getTime()){
+                    event = new Date(now.getFullYear()+1, myBirth[0], myBirth[1]);
+                    var diff = now.getTime() - event.getTime();
+                    var days = Math.floor(diff/86400000);
+                    var res = days + " days remaining.";
+                    document.getElementById('res2').innerHTML = res;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3 align="center" style="color: blueviolet;">Select Your Birthday</h3>
+        <form align="center" name="dateForm" method="post">
+            <input id="bd" type="date"/><br/><br/>
+            <input type="button" value="Submit" onclick="counter()"/>
+            <div id="res"><p id="res2" style="color: green; font-size: 30px; font-style: oblique;"></p></div>
+        </form>
+    </body>
+</html>

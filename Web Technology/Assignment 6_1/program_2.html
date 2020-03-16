@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Form Validator</title>
+        <script>
+            function demo(){
+                var name = document.getElementById("name").value;
+                var password = document.getElementById("password").value;
+                var email = document.getElementById("email").value;
+                var number = document.getElementById("number").value;
+                var nameRegex = /^(?!.*(_|@|\d|\s))[\w\d\-]+$/;
+                var passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{5,12}$/;
+                var emailRegex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+                var numberRegex = /^[8|9]\d{9}$/;
+                var res;
+                if(name.match(nameRegex) && password.match(passwordRegex) && email.match(emailRegex) && number.match(numberRegex)){
+                    res = "Data Submitted Successfully.";
+                    alert(res);
+                }
+                if(!name.match(nameRegex)){
+                    res = "Name Is Invalid.";
+                    alert(res);
+                }
+                if(!password.match(passwordRegex)){
+                    res = "Password Is Invalid.";
+                    alert(res);
+                }
+                if(!email.match(emailRegex)){
+                    res = "Email Is Invalid.";
+                    alert(res);
+                }
+                if(!number.match(numberRegex)){
+                    res = "Number Is Invalid.";
+                    alert(res);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="validation" align="center">
+            <fieldset>
+                Username : <input type="text" id="name" name="username" Placeholder="john-doe"/><br/>
+                Password : <input type="password" id="password" name="password" Placeholder="&#9679&#9679&#9679&#9679"/><br/>
+                 Birth Date : <input type="date" id="date" name="bdate"/><br/>
+                Email : <input type="text" id="email" name="email" Placeholder="johndoe@gmail.com"/><br/>
+                Mobile : <input type="text" id="number" name="number" Placeholder="9876543210"/><br/>    
+                <input type="button" id="submit" name="submit" onclick="demo()" value="Submit"/><br/>
+            </fieldset>
+        </form>
+        <h2 id="res" style="color: green; text-align: center;"></h2>
+    </body>
+</html>

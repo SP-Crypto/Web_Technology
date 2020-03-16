@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS To Search A Word</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>
+            <h3>Given String Is : <h2>This is a demo javascript.</h2></h3>
+            Search A Word : <input type="text" class="word" id="word" required/>
+            <input type="submit" class="submit" id="submit" onclick="findWord()"/>
+        </div>
+        <script>
+            function findWord(){
+                var str = "This is a demo javascript.";
+                var arr = str.split(" ");
+                var word = document.getElementById("word").value;
+                for(var i = 0; i < arr.length - 1; i++){
+                    if(arr.indexOf(word)!=-1){
+                        document.write(arr.indexOf(word)+1);
+                        break;
+                    }
+                    else{
+                        document.write("Word not found.");
+                        break;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

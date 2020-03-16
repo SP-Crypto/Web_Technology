@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Fibonaci Series</title>
+        <style>
+            .textbox {
+                width:250px;
+                height:25px;
+                margin:0 auto;
+            }
+            .button{
+                margin: 0 auto;
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1 align="center">Fibonaci Generator</h1>
+            <div class="textbox">
+            <input class="textbox" type="text" name="i1" id="i1" placeholder=""/></div><br/>
+            <div class="button">
+            <input style="background-color: cornsilk" type="submit" name="submit" value="Submit" onclick="demo();"/></div>
+            </form>
+        <script>
+            var a = 0;
+            var b = 1;
+            function demo() {
+                var inputValue = document.getElementById("i1").value;
+                document.write("<h3>" + "Your requested Fibonacci Series is given below." +"</h1><br/><br/>");
+                document.write("<h2>"+"Answer : ",a," ");
+                document.write("",b," ");
+                var i,res;
+                for(i=2; i<inputValue;i++){
+                    res=a+b;
+                    document.write("",res," ");
+                    a = b;
+                    b = res;
+                    res = a;
+                }
+                document.write("</h2>");
+            }
+        </script>
+    </body>
+</html>
